@@ -145,17 +145,17 @@ namespace MonoGameWindowsStarter
             //check for ball collision with player
             if (!((ballPosition.X > playerRect.X + playerRect.Width) || (ballPosition.X + 100 < playerRect.X) || (ballPosition.Y > playerRect.Y + playerRect.Height) || (ballPosition.Y + 100 < playerRect.Y)))
             {
-                if(!((ballPosition.X > playerRect.X + playerRect.Width) || (ballPosition.X + 100 < playerRect.X)))
-                {
-                    ballVelocity.X *= -1;
-                    float delta = 0 - ballPosition.X;
-                    //ballPosition.X += 2 * delta;
-                }
-                if(!((ballPosition.Y > playerRect.Y + playerRect.Height) || (ballPosition.Y + 100 < playerRect.Y)))
+                if (!((ballPosition.Y > playerRect.Y + playerRect.Height) || (ballPosition.Y + 100 < playerRect.Y)))
                 {
                     ballVelocity.Y *= -1;
                     float delta = 0 - ballPosition.Y;
                     //ballPosition.Y += 2 * delta;
+                }
+                else if (!((ballPosition.X > playerRect.X + playerRect.Width) || (ballPosition.X + 100 < playerRect.X)))
+                {
+                    ballVelocity.X *= -1;
+                    float delta = 0 - ballPosition.X;
+                    //ballPosition.X += 2 * delta;
                 }
             }
 
